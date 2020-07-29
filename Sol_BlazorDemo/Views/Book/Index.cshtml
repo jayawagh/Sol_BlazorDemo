@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@model Sol_BlazorDemo.ViewModels.BookViewModel
+<h1>Index</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <component
+                       render-mode="ServerPrerendered"
+                       type="typeof(MovieTableComponent)"
+                       param-bookList="@Model.bookListVM"
+                       param-tableSyles="@Model.bookUi.tableCss"
+                       ></component>
+        </div>
+    </div>
+</div>

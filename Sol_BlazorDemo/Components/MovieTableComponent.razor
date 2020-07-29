@@ -1,0 +1,35 @@
+﻿@using Sol_BlazorDemo.Models
+
+@if (bookList?.Count >= 1)
+{
+    @foreach (var bookListModel in bookList)
+    { 
+        <table class="@tableSyles">
+            <tr>
+                <td>
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src='@bookListModel.CoverImage' alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">@bookListModel.Name</h5>
+                            <p class="card-text">@bookListModel.Details</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    }
+    
+}
+else
+{ 
+    <h3>No Records Found</h3>
+}
+@code {
+
+    [Parameter]
+    public List<BookModel> bookList { get; set; }
+
+    [Parameter]
+    public string tableSyles { get; set; }
+}
